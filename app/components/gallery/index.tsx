@@ -5,6 +5,7 @@ import { Tab } from "@headlessui/react";
 
 import { Image as ImageType } from "@/types";
 import React from "react";
+import GalleryTab from "./gallery-tab";
 
 interface GalleryProps {
   images: ImageType[];
@@ -20,6 +21,20 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
           ))}
         </Tab.List>
       </div>
+      <Tab.Panels className="aspect-square w-full">
+        {images.map((image) => (
+          <Tab.Panel key={image.id}>
+            <div className="aspect-square relative h-full w-full sm:rounded-lg overflow-hidden">
+              <Image
+                fill
+                src={image.url}
+                alt="Image"
+                className="object-cover object-center"
+              />
+            </div>
+          </Tab.Panel>
+        ))}
+      </Tab.Panels>
     </Tab.Group>
   );
 };
