@@ -2,7 +2,7 @@ import getCategory from "@/actions/get-category";
 import getColors from "@/actions/get-colors";
 import getProducts from "@/actions/get-products";
 import getSizes from "@/actions/get-sizes";
-import Billboard from "@/app/components/billboard";
+import Billboard from "@/app/components/ui/billboard";
 import Container from "@/app/components/ui/container";
 import React from "react";
 import Filter from "./components/filter";
